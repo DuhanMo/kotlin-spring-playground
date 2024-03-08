@@ -23,6 +23,8 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    // coroutine
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
 }
 
 tasks.withType<KotlinCompile> {
