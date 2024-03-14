@@ -23,6 +23,9 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.springframework.boot:spring-boot-starter-batch")
+    testImplementation("org.springframework.batch:spring-batch-test")
+    runtimeOnly("org.hsqldb:hsqldb")
     // coroutine
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
 }
