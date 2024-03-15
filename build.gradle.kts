@@ -22,7 +22,12 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:6.0.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.springframework.boot:spring-boot-starter-batch")
+    testImplementation("org.springframework.batch:spring-batch-test")
+    runtimeOnly("com.mysql:mysql-connector-j")
+    runtimeOnly("org.hsqldb:hsqldb")
     // coroutine
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
 }
