@@ -19,24 +19,25 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:6.0.3")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-    implementation("org.springframework.boot:spring-boot-starter-batch")
-    testImplementation("org.springframework.batch:spring-batch-test")
-    runtimeOnly("com.mysql:mysql-connector-j")
-    runtimeOnly("org.hsqldb:hsqldb")
+//    implementation("org.springframework.boot:spring-boot-starter-web")
+//    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+//    implementation("org.jetbrains.kotlin:kotlin-reflect")
+//    implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:6.0.3")
+//    testImplementation("org.springframework.boot:spring-boot-starter-test")
+//    implementation("org.springframework.boot:spring-boot-starter-batch")
+//    testImplementation("org.springframework.batch:spring-batch-test")
+//    runtimeOnly("com.mysql:mysql-connector-j")
+//    runtimeOnly("org.hsqldb:hsqldb")
 }
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs += "-Xjsr305=strict"
-        jvmTarget = "17"
+        jvmTarget = "21"
     }
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+

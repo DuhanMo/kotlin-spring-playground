@@ -19,20 +19,20 @@ class NextStepConfiguration {
     }
 
     @Bean
-    fun stepNextJob(jobRepository: JobRepository, step1: Step, step2: Step, step3: Step): Job {
+    fun stepNextJob(jobRepository: JobRepository, nextStep1: Step, nextStep2: Step, nextStep3: Step): Job {
         return JobBuilder("stepNextJob", jobRepository)
-            .start(step1)
-            .next(step2)
-            .next(step3)
+            .start(nextStep1)
+            .next(nextStep2)
+            .next(nextStep3)
             .build()
     }
 
     @Bean
-    fun step1(
+    fun nextStep1(
         jobRepository: JobRepository,
         transactionManager: DataSourceTransactionManager,
     ): Step {
-        return StepBuilder("step1", jobRepository)
+        return StepBuilder("nextStep1", jobRepository)
             .tasklet({ _, _ ->
                 logger.info(">>> This is step1")
                 RepeatStatus.FINISHED
@@ -41,11 +41,11 @@ class NextStepConfiguration {
     }
 
     @Bean
-    fun step2(
+    fun nextStep2(
         jobRepository: JobRepository,
         transactionManager: DataSourceTransactionManager,
     ): Step {
-        return StepBuilder("step2", jobRepository)
+        return StepBuilder("nextStep2", jobRepository)
             .tasklet({ _, _ ->
                 logger.info(">>> This is step2")
                 RepeatStatus.FINISHED
@@ -54,11 +54,11 @@ class NextStepConfiguration {
     }
 
     @Bean
-    fun step3(
+    fun nextStep3(
         jobRepository: JobRepository,
         transactionManager: DataSourceTransactionManager,
     ): Step {
-        return StepBuilder("step3", jobRepository)
+        return StepBuilder("nextStep3", jobRepository)
             .tasklet({ _, _ ->
                 logger.info(">>> This is step3")
                 RepeatStatus.FINISHED

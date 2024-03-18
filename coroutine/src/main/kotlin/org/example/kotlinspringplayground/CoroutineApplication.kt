@@ -10,10 +10,10 @@ import org.springframework.boot.runApplication
 import org.springframework.web.client.RestClient
 
 @SpringBootApplication
-class KotlinSpringPlaygroundApplication
+class CoroutineApplication
 
 fun main(args: Array<String>) {
-    runApplication<KotlinSpringPlaygroundApplication>(*args)
+    runApplication<CoroutineApplication>(*args)
     val restClient = RestClient.create()
     val items: IntRange = 1..150
     val start = System.currentTimeMillis()
@@ -32,5 +32,5 @@ fun main(args: Array<String>) {
         }
     }
     val end = System.currentTimeMillis()
-    println("total time: ${end - start}" )
+    println("total time: ${end - start}")
 }

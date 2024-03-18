@@ -17,18 +17,18 @@ class BatchConfiguration {
         private val logger = LoggerFactory.getLogger(BatchConfiguration::class.java)
     }
     @Bean
-    fun job(jobRepository: JobRepository, step1: Step): Job {
-        return JobBuilder("job", jobRepository)
-            .start(step1)
+    fun simpleJob(jobRepository: JobRepository, simpleStep: Step): Job {
+        return JobBuilder("simpleJob", jobRepository)
+            .start(simpleStep)
             .build()
     }
 
     @Bean
-    fun step1(
+    fun simpleStep(
         jobRepository: JobRepository,
         transactionManager: DataSourceTransactionManager,
     ): Step {
-        return StepBuilder("step1", jobRepository)
+        return StepBuilder("simpleStep", jobRepository)
             .tasklet({ _, _ ->
                 logger.info("This is step1")
                 RepeatStatus.FINISHED
