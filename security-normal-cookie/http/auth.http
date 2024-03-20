@@ -1,0 +1,38 @@
+### 로그인화면
+GET http://localhost:8080/login
+
+### 로그인
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+username = user1 &
+password = 1234
+
+### 홈화면
+GET http://localhost:8080/
+
+### 유저화면
+GET http://localhost:8080/user
+
+### 어드민화면
+GET http://localhost:8080/admin
+
+### 회원가입
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "user2",
+  "password": "1234"
+}
+
+### email,passowrd 로그인
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user2",
+  "password": "1234"
+}
+
+
