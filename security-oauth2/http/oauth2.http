@@ -1,0 +1,13 @@
+### 로그인화면
+GET http://localhost:8080/oauth2/code/KAKAO?state=keep
+
+
+### 인증코드를 통한 로그인
+POST http://localhost:8080/oauth2/login
+Content-Type: application/json
+
+{
+  "provider": "KAKAO",
+  "code": "XmMmJjAibthBbrW0Bl7-r900WzZJodl8eSbxfqaoSy6TmlC1tbXAeZwzxL8KPXTZAAABjmA8DACSBpCp5rpDbg"
+}
+
