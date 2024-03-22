@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RequestHeader
 @FeignClient(value = "kakao-user-api", url = "https://kapi.kakao.com")
 interface KakaoUserApi {
     @GetMapping("/v2/user/me", consumes = [MediaType.APPLICATION_JSON_VALUE])
-    fun fetchUser(@RequestHeader(name = HttpHeaders.AUTHORIZATION) accessToken: String)
+    fun fetchUser(@RequestHeader(name = HttpHeaders.AUTHORIZATION) accessToken: String): KakaoUserResponse
 }

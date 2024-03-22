@@ -1,9 +1,9 @@
-package org.dev.otte.auth.infra.oauth2.kakao.dto
+package org.example.security.oauth2.infra.kakao
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
-import org.dev.otte.auth.command.domain.OAuth2UserData
-import org.dev.otte.user.command.domain.SocialProvider
+import org.example.security.oauth2.domain.OAuth2UserData
+import org.example.security.oauth2.domain.SocialProvider
 import java.time.LocalDateTime
 
 @JsonNaming(value = SnakeCaseStrategy::class)
@@ -14,7 +14,7 @@ data class KakaoUserResponse(
     val kakaoAccount: KakaoAccount,
 ) {
     fun toOAuth2UserData(): OAuth2UserData {
-        return OAuth2UserData(SocialProvider.KAKAO, id.toString(), properties.profileImage)
+        return OAuth2UserData(SocialProvider.KAKAO, id.toString(), properties.nickname)
     }
 }
 
