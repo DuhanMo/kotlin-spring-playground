@@ -10,14 +10,14 @@ spring:
 
 oauth2:
   kakao:
-    client-id: f07f3819a47565895db9f6baf4cb18da
-    client-secret: 9M3ObmBLIppP7JX8okbDhxtRrCtadzB3
+    client-id:
+    client-secret:
     redirect-uri: http://localhost:8080/oauth2/callback/KAKAO
     scope:
       - "profile_nickname"
   google:
-    client-id: 1064904822166-rhivkmljvsip9vc3p5b2nknv4uebnrjs.apps.googleusercontent.com
-    client-secret: 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
+    client-id:
+    client-secret:
     redirect-uri: http://localhost:8080/oauth2/callback/GOOGLE
     scope:
       - "email"

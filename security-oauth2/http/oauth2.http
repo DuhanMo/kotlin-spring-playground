@@ -1,13 +1,15 @@
 ### 로그인화면
 GET http://localhost:8080/oauth2/code/KAKAO?state=keep
 
+### 시큐어드
+GET http://localhost:8080/secured
 
 ### 인증코드를 통한 로그인
 POST http://localhost:8080/oauth2/login
 Content-Type: application/json
 
 {
-  "provider": "KAKAO",
-  "code": "XmMmJjAibthBbrW0Bl7-r900WzZJodl8eSbxfqaoSy6TmlC1tbXAeZwzxL8KPXTZAAABjmA8DACSBpCp5rpDbg"
+  "provider": "GOOGLE",
+  "code": "4/0AeaYSHCztOr094OSEOqRCMela6k7IHYP6DHASYQ8zlp-eDtcK_8jkn60Qw5fycX_A7juoA"
 }
 

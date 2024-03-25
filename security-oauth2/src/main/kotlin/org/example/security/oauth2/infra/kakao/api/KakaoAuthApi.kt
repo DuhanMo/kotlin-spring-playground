@@ -1,5 +1,6 @@
-package org.example.security.oauth2.infra.kakao
+package org.example.security.oauth2.infra.kakao.api
 
+import org.example.security.oauth2.infra.kakao.dto.KakaoToken
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.http.MediaType
 import org.springframework.util.MultiValueMap

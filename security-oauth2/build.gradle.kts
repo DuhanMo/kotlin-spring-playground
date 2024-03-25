@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.4"
     kotlin("jvm") version "1.9.22"
     kotlin("plugin.spring") version "1.9.22"
+    kotlin("plugin.jpa") version "1.9.22"
 }
 
 allOpen {
@@ -34,6 +35,8 @@ dependencies {
 
     runtimeOnly("com.mysql:mysql-connector-j")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+    implementation("org.springframework.session:spring-session-jdbc")
+
 }
 
 dependencyManagement {

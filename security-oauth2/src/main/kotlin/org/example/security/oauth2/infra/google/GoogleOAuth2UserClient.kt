@@ -1,27 +1,26 @@
-package org.example.security.oauth2.infra.kakao
+package org.example.security.oauth2.infra.google
 
 import org.example.security.oauth2.domain.OAuth2UserClientStrategy
 import org.example.security.oauth2.domain.OAuth2UserData
 import org.example.security.oauth2.domain.SocialProvider
-import org.example.security.oauth2.infra.kakao.api.KakaoApi
-import org.example.security.oauth2.infra.kakao.api.KakaoAuthApi
+import org.example.security.oauth2.infra.google.api.GoogleApi
+import org.example.security.oauth2.infra.google.api.GoogleOAuth2Api
 import org.springframework.stereotype.Component
 import org.springframework.util.LinkedMultiValueMap
 import org.springframework.util.MultiValueMap
 
 @Component
-class KakaoOAuth2UserClient(
-    private val kakaoAuthApi: KakaoAuthApi,
-    private val kakaoApi: KakaoApi,
-    private val properties: KakaoOAuth2Properties
+class GoogleOAuth2UserClient(
+    private val googleOAuth2Api: GoogleOAuth2Api,
+    private val googleApi: GoogleApi,
+    private val properties: GoogleOAuth2Properties
 ) : OAuth2UserClientStrategy {
-
     override val support: SocialProvider
-        get() = SocialProvider.KAKAO
+        get() = SocialProvider.GOOGLE
 
     override fun fetch(code: String): OAuth2UserData {
-        val kakaoToken = kakaoAuthApi.fetchToken(tokenRequestParam(code))
-        return kakaoApi.fetchUser("Bearer ${kakaoToken.accessToken}")
+        val googleToken = googleOAuth2Api.fetchToken(tokenRequestParam(code))
+        return googleApi.fetchUser("Bearer ${googleToken.accessToken}")
             .toOAuth2UserData()
     }
 

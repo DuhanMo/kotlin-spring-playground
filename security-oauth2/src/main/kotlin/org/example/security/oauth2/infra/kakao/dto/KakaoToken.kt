@@ -1,4 +1,4 @@
-package org.example.security.oauth2.infra.kakao
+package org.example.security.oauth2.infra.kakao.dto
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming

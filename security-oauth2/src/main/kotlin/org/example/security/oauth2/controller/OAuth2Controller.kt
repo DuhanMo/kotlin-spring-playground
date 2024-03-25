@@ -6,7 +6,6 @@ import org.example.security.oauth2.domain.SocialProvider
 import org.example.security.oauth2.service.OAuth2Service
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -37,7 +36,7 @@ class OAuth2Controller(
         response.sendRedirect(getTargetUrl(code, state, provider))
     }
 
-    @PostMapping("/login")
+    //    @PostMapping("/login")
     fun login(@RequestBody request: OAuth2LoginRequest) {
         oAuth2Service.login(request.provider, request.code)
     }
