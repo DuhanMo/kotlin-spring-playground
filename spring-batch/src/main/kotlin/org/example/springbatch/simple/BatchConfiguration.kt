@@ -1,12 +1,14 @@
-package org.example.kotlinspringplayground.batch
+package org.example.springbatch.simple
 
 import org.slf4j.LoggerFactory
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.Step
+import org.springframework.batch.core.configuration.annotation.JobScope
 import org.springframework.batch.core.job.builder.JobBuilder
 import org.springframework.batch.core.repository.JobRepository
 import org.springframework.batch.core.step.builder.StepBuilder
 import org.springframework.batch.repeat.RepeatStatus
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.jdbc.datasource.DataSourceTransactionManager
@@ -24,13 +26,16 @@ class BatchConfiguration {
     }
 
     @Bean
+    @JobScope
     fun simpleStep(
+        @Value("#{jobParameters[requestDate]}") requestDate: String,
         jobRepository: JobRepository,
         transactionManager: DataSourceTransactionManager,
     ): Step {
         return StepBuilder("simpleStep", jobRepository)
             .tasklet({ _, _ ->
-                logger.info("This is step1")
+                logger.info(">>> This is simpleStep")
+                logger.info(">>> requestDate = $requestDate")
                 RepeatStatus.FINISHED
             }, transactionManager)
             .build()

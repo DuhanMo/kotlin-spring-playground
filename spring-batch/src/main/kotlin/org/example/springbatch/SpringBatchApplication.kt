@@ -1,4 +1,4 @@
-package org.example.kotlinspringplayground
+package org.example.springbatch
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
