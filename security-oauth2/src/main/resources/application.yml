@@ -1,4 +1,7 @@
 spring:
+  config:
+    import:
+      - classpath:application-secret.yml
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/spring_security_oauth2
@@ -7,20 +10,5 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-
-oauth2:
-  kakao:
-    client-id:
-    client-secret:
-    redirect-uri: http://localhost:8080/oauth2/callback/KAKAO
-    scope:
-      - "profile_nickname"
-  google:
-    client-id:
-    client-secret:
-    redirect-uri: http://localhost:8080/oauth2/callback/GOOGLE
-    scope:
-      - "email"
-      - "profile"
 app:
   client-base-url: http://localhost:3000
