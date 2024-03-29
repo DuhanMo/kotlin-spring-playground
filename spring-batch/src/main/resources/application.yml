@@ -1,6 +1,8 @@
 spring:
   profiles:
     active: local
+  jpa:
+    show-sql: true
 spring.batch.job.name: ${job.name:NONE}
 logging:
   level:
