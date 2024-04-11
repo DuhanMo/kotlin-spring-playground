@@ -1,0 +1,16 @@
+### 멤버 목록 조회
+GET http://localhost:8080/members
+Accept: application/json
+
+### 멤버 저장
+POST http://localhost:8080/members
+Content-Type: application/json
+
+{
+  "name": "아무개",
+  "age": 32
+}
+
+### 멤버 단건 조회
+GET http://localhost:8080/members/2
+Accept: application/json
