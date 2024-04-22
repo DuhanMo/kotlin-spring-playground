@@ -1,0 +1,5 @@
+### internal -> external 호출 coroutine 사용
+GET http://localhost:8080/internal/coroutine/100
+
+### internal -> external 호출 coroutine 미사용
+GET http://localhost:8080/internal/not-coroutine/100
